@@ -1,0 +1,21 @@
+﻿@model Lab_6.Models.Institute
+
+@{
+    ViewBag.Title = "CreateInstitute";
+}
+
+<h2>New Institute</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name, "Institute Name");
+    <br />
+    @Html.EditorFor(model => model.Name);
+    <br />
+    <br />
+    <input type="submit" value="Create" />
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Institute")
+</div>

@@ -1,0 +1,19 @@
+﻿@model Lab_6.Models.Cathedra
+
+@{
+    ViewBag.Title = "DeleteCathedra";
+}
+
+<h2>Delete Cathedra</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<dl>
+    <dt>Name</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Name);
+    </dd>
+</dl>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" />
+}

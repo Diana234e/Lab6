@@ -1,0 +1,31 @@
+﻿@model Lab_6.Models.Teacher
+
+@{
+    ViewBag.Title = "CreateTeacher";
+}
+
+<h2>New Teacher</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.FirstName, "FirstName")
+    <br />
+    @Html.EditorFor(model => model.FirstName)
+    <br />
+    <br />
+    @Html.LabelFor(model => model.LastName, "LastName")
+    <br />
+    @Html.EditorFor(model => model.LastName)
+    <br />
+    <br />
+    @Html.LabelFor(model => model.CathedraID, "CathedraID")
+    <br />
+    @Html.EditorFor(model => model.CathedraID)
+    <br />
+    <br />
+    <input type="submit" value="Create" />
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

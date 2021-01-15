@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Lab_6.Models.Institute>
+
+@{
+    ViewBag.Title = "Institutes";
+}
+
+<h2>Institutes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateInstitute")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID);
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name);
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.ID)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "DeleteInstitute", new { id = item.ID })
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,26 @@
+﻿@using Lab_6.Models
+@model Institute
+@{
+    ViewBag.Title = "Details";
+}
+
+<fieldset>
+    <legend>Institutes and Departments</legend>
+
+    <div class="display-label"><b>Name</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+    
+
+    <div class="display-label"><b>Cathedra</b></div>
+    <ul>
+        @foreach (Cathedra c in Model.Cathedra)
+        {
+            <li>@c.Name</li>
+        }
+    </ul>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</fieldset>

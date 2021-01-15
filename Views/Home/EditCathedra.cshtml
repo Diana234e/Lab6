@@ -1,0 +1,34 @@
+﻿@using Lab_6.Models
+@model Cathedra
+@{
+    ViewBag.Title = "EditCathedra";
+}
+
+@using (Html.BeginForm())
+{
+
+    <fieldset>
+        <legend>Cathedra</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label"><b>Name</b></div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+        </div>
+
+        <div class="editor-label"><b>Institute</b></div>
+        @foreach (Teacher c in ViewBag.Teacher)
+        {
+            <input type="checkbox" name="selectedInstitute" value="@c.ID"
+                   @(Model.Teacher.Contains(c) ? "checked=\"checked\"" : "") />@c.CathedraID <br />
+            }
+
+        <p>
+            <input type="submit" value="Сохранить" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Cathedra")
+</div>

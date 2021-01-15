@@ -1,0 +1,36 @@
+﻿@using Lab_6.Models
+@model Teacher
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+@using (Html.BeginForm())
+{
+
+    <fieldset>
+        <legend>Teacher</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label"><b>Ім'я</b></div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label"><b>Прізвище</b></div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+        </div>
+        <div class="editor-label"><b>ID кафедри</b></div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CathedraID)
+        </div>
+        <p>
+            <input type="submit" value="Зберегти" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
